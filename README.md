@@ -50,21 +50,46 @@ python --version
 !! importante !! - a versão deve ser compatível com a listada acima, caso não seja, verifique os procedimentos necessários para adequar a versão
 
 com o diretório do seu repositório aberto no terminal, crie e ative o ambiente virtual com os seguintes comandos:
-.
-python -m venv venv
-source venv/bin/activate  
---> No Windows use `venv\Scripts\activate`
+
+---> Linux
+ * python -m venv venv
+ * source venv/bin/activate
+   
+--> No Windows
+  * venv\Scripts\activate
 .
 # Instale as dependências:
 
-pip install -r requirements.txt
+o comando deve ser inserido no terminal, dentro do diretório do projeto.
+
+* pip install -r requirements.txt
 
 # Configure as variáveis de ambiente:
 Crie um arquivo .env na raiz do projeto e adicione:
 >>
-DEBUG=True
-SECRET_KEY=sua_chave_secreta
-DATABASE_URL=postgres://usuario:senha@localhost/nome_do_banco
+* DEBUG=True
+* SECRET_KEY=sua_chave_secreta   ------ a sua chave
+* DATABASE_URL=postgres://usuario:senha@localhost/nome_do_banco   ----- seu login
+
+Essa etapa de configuração de variáveis de ambiente serve para definir informações sensíveis e configuráveis fora do código-fonte, facilitando a manutenção e segurança do projeto. Ao criar o arquivo .env, você está fornecendo valores específicos para seu projeto de forma segura e flexível. Vamos entender melhor os itens mencionados:
+
+* DEBUG=True:
+
+Ativa o modo de depuração no Django. Quando o DEBUG está True, o Django fornece mensagens detalhadas de erro e logs, úteis durante o desenvolvimento. Em produção, isso deve estar False para evitar a exposição de informações sensíveis.
+
+
+* SECRET_KEY=sua_chave_secreta:
+
+O SECRET_KEY é utilizado pelo Django para fornecer segurança nas sessões de usuários e na geração de tokens. Ele é uma chave secreta que deve ser única e não deve ser exposta publicamente. Ela garante a integridade de certas funcionalidades, como a criptografia de cookies.
+
+  
+* DATABASE_URL=postgres://usuario:senha@localhost/nome_do_banco:
+
+
+Define a URL de conexão com o banco de dados PostgreSQL. Ela especifica o usuário, senha, endereço do servidor e o nome do banco que o Django vai usar para armazenar e recuperar dados. No formato fornecido, você deve substituir usuario, senha, e nome_do_banco pelos valores corretos do seu ambiente de banco de dados.
+
+
+Ao usar um arquivo .env, você mantém essas variáveis fora do código fonte, tornando mais fácil mudar essas configurações entre ambientes (desenvolvimento, produção, etc.) sem alterar o código diretamente. Isso também ajuda a manter informações confidenciais (como a SECRET_KEY e as credenciais do banco de dados) seguras.
 
 # Execute as migrações:
 
