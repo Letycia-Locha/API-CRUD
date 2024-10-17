@@ -28,6 +28,47 @@
 - Python 3.x: [Download Python](https://www.python.org/downloads/)
 - PostgreSQL: [Download PostgreSQL](https://www.postgresql.org/download/)
 - (Opcional) VSCode: [Download VSCode](https://code.visualstudio.com/download)
+
+# Como instalar e ativar o PostgreSQL pelo seu terminal
+
+-- no LINUX
+
+Instalação
+
+* sudo apt update
+* sudo apt install postgresql postgresql-contrib
+
+Verificar status do serviço
+
+* sudo systemctl status postgresql
+
+Iniciar o serviço
+
+* sudo systemctl start postgresql
+
+Habilitar o serviço para iniciar automaticamente
+
+* sudo systemctl enable postgresql
+
+Acessar o prompt do PostgreSQL
+
+* sudo -u postgres psql
+
+
+-- no Windows
+
+No Windows, o PostgreSQL geralmente é instalado via um instalador gráfico. Após a instalação, você pode usar o seguinte no Prompt de Comando:
+
+
+* net start postgresql
+
+Para serviços:
+
+* net stop postgresql
+
+Acessar o prompt do PostgreSQL (assumindo que o caminho do PostgreSQL está no PATH):
+
+* psql -U postgres
   
 # Clone o repositório:
 
