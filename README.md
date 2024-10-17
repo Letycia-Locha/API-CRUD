@@ -17,15 +17,30 @@
 * Django
 * Django REST Framework
 * PostgreSQL
-* JWT para autenticação
-* Configuração do Ambiente
-  
+* JWT para autenticação -
+* Configuração do Ambiente - as instruçẽos para configuração do ambiente estão descritas mais abaixo
+  (as versões devem ser compativeis com as utilizadas na construção do projeto e estão descritas no documento requirements.txt)
 # Clone o repositório:
 
-git clone https://github.com/seu-usuario/seu-repositorio.git
+1 - utilize sua conta do github para clonar o repositório
+2 - crie um repositorio próprio com o nome que desejar
+3 - substitua "seu-usuario" pelo usuário da sua conta
+4 - substitua "seu-repositorio" pelo titulo que você deu ao seu repositorio
+>>   git clone https://github.com/seu-usuario/seu-repositorio.git  <<
+
+no terminal do seu vscode, navegue até o repositório criado para execução do projeto
 cd seu-repositorio
 
 # Crie e ative um ambiente virtual:
+
+verifique se o python esta instalado na sua máquina executando esse comando no terminal (pode ser o terminal do seu sistema operacional, do vscode, ou qualquer outro da sua preferencia que tenha acesso aos seus diretórios)
+
+python --version
+
+!! importante !! - a versão deve ser compatível com a listada no "requirements.txt", caso não seja, verifique os procedimentos necessários para adequar a versão
+
+com o diretório do seu repositório aberto no terminal, crie e ative o ambiente virtual com os seguintes comandos:
+
 python -m venv venv
 source venv/bin/activate  
 --> No Windows use `venv\Scripts\activate`
