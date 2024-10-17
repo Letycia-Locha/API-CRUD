@@ -201,3 +201,5 @@ curl -X POST http://localhost:8000/licoes/1/editar-html/
      -H "Content-Type: application/json" 
      
      -d '{"conteudo_html": "<div style=\"color: blue;\">Novo conteúdo HTML</div>"}'
+
+
