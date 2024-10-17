@@ -51,10 +51,10 @@ python manage.py runserver
 
 # Endpoints da API
 * Usuários
-POST /usuarios/ - Criar um novo usuário
-GET /usuarios/{id}/ - Obter detalhes de um usuário
-PUT /usuarios/{id}/ - Atualizar um usuário
-DELETE /usuarios/{id}/ - Remover um usuário
+- POST /usuarios/ - Criar um novo usuário
+- GET /usuarios/{id}/ - Obter detalhes de um usuário
+- PUT /usuarios/{id}/ - Atualizar um usuário
+- DELETE /usuarios/{id}/ - Remover um usuário
 * Autenticação
 POST /api/token/ - Obter token JWT
 * Lições
@@ -63,8 +63,8 @@ POST /licoes/{id}/editar-html/ - Editar o conteúdo HTML de uma lição
 # Exemplos de Uso
 --------------  Criar um Usuário
 
-curl -X POST http://localhost:8000/usuarios/ \
-     -H "Content-Type: application/json" \
+curl -X POST http://localhost:8000/usuarios/ 
+     -H "Content-Type: application/json" 
      -d {
     "username": "lelocha",
     "email": "letycialochavet@gmail.com",
