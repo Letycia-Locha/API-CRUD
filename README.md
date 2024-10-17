@@ -28,6 +28,7 @@
 - Python 3.x: [Download Python](https://www.python.org/downloads/)
 - PostgreSQL: [Download PostgreSQL](https://www.postgresql.org/download/)
 - (Opcional) VSCode: [Download VSCode](https://code.visualstudio.com/download)
+- Django 
 
 # Como instalar e ativar o PostgreSQL pelo seu terminal
 
@@ -122,6 +123,19 @@ Ativa o modo de depuração no Django. Quando o DEBUG está True, o Django forne
 * SECRET_KEY=sua_chave_secreta:
 
 O SECRET_KEY é utilizado pelo Django para fornecer segurança nas sessões de usuários e na geração de tokens. Ele é uma chave secreta que deve ser única e não deve ser exposta publicamente. Ela garante a integridade de certas funcionalidades, como a criptografia de cookies.
+
+Para criar o SECRET_KEY você deve:
+
+- utilize o repositório do seu projeto no terminal
+- inicie o ambiente virtual
+- execute os seguintes comandos:
+
+- python
+
+- from django.core.management.utils import get_random_secret_key
+
+- print(get_random_secret_key())
+
 
   
 * DATABASE_URL=postgres://usuario:senha@localhost/nome_do_banco:
