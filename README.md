@@ -14,12 +14,21 @@
 * Endpoint para edição do conteúdo HTML das lições
   
 # Tecnologias Utilizadas:
-* Django
+* VSCode
+* Python 3.12.3
+* Django 5.1.2
 * Django REST Framework
 * PostgreSQL
 * JWT para autenticação -
 * Configuração do Ambiente - as instruçẽos para configuração do ambiente estão descritas mais abaixo
   (as versões devem ser compativeis com as utilizadas na construção do projeto e estão descritas no documento requirements.txt)
+
+# Pré requisitos:
+
+- Python 3.x: [Download Python](https://www.python.org/downloads/)
+- PostgreSQL: [Download PostgreSQL](https://www.postgresql.org/download/)
+- (Opcional) VSCode: [Download VSCode](https://code.visualstudio.com/download)
+  
 # Clone o repositório:
 
 - 1 - utilize sua conta do github para clonar o repositório
@@ -34,18 +43,18 @@ cd seu-repositorio
 .
 # Crie e ative um ambiente virtual:
 
-verifique se o python esta instalado na sua máquina executando esse comando no terminal (pode ser o terminal do seu sistema operacional, do vscode, ou qualquer outro da sua preferencia que tenha acesso aos seus diretórios)
+Verifique se o python esta instalado na sua máquina executando esse comando no terminal (pode ser o terminal do seu sistema operacional, do vscode, ou qualquer outro da sua preferencia que tenha acesso aos seus diretórios)
 
 python --version
 
-!! importante !! - a versão deve ser compatível com a listada no "requirements.txt", caso não seja, verifique os procedimentos necessários para adequar a versão
+!! importante !! - a versão deve ser compatível com a listada acima, caso não seja, verifique os procedimentos necessários para adequar a versão
 
 com o diretório do seu repositório aberto no terminal, crie e ative o ambiente virtual com os seguintes comandos:
-
+.
 python -m venv venv
 source venv/bin/activate  
 --> No Windows use `venv\Scripts\activate`
-
+.
 # Instale as dependências:
 
 pip install -r requirements.txt
