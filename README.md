@@ -172,7 +172,7 @@ POST /licoes/{id}/editar-html/ - Editar o conteúdo HTML de uma lição
 # Exemplos de Uso
 --------------  Criar um Usuário
 
-curl -X POST http://localhost:8000/usuarios/ 
+curl -X POST http://localhost:8000/api/usuarios/ 
 
      -H "Content-Type: application/json" 
      
@@ -192,7 +192,13 @@ curl -X POST http://localhost:8000/usuarios/
     
       }
 
---------------- Obter Token JWT
+
+Será gerado um token automáticamente, para realizar as demais funções será necessário utilizar o token, portanto salve-o
+Também será gerado um <id> para o usuário, necessário para as demais requisições
+
+
+
+--------------- Obter Token JWT- em caso de perda do token
 
 curl -X POST http://localhost:8000/api/token/ 
 
@@ -206,9 +212,43 @@ curl -X POST http://localhost:8000/api/token/
           
           }
 
+---------------- Obter informações sobe um usuário
+
+curl -X GET http://localhost:8000/api/usuarios/<id>/
+
+    - H "Authorization: Bearer seu_token_jwt" 
+    
+    - H "Content-Type: application/json"
+    
+    d { }
+
+
+    
+-------------- Atualizar um usuário
+
+curl -X PUT http://localhost:8000/api/usuarios/<id>/
+
+    - H "Authorization: Bearer seu_token_jwt" 
+
+    
+    - H "Content-Type: application/json"
+    
+    d { }
+
+
+
+----------------Deletar um usuário
+
+  curl -X DEL http://localhost:8000/api/usuarios/<id>/
+  
+    - H "Authorization: Bearer seu_token_jwt" 
+
+
+
+
 --------------- Editar HTML de uma Lição
 
-curl -X POST http://localhost:8000/licoes/1/editar-html/ 
+curl -X POST http://localhost:8000/licoes/<id>/editar-html/ 
 
      -H "Authorization: Bearer seu_token_jwt" 
      
@@ -222,4 +262,4 @@ curl -X POST http://localhost:8000/licoes/1/editar-html/
 * Validação de usuário
 * Validação de senha com nível de segurança de mesma
 * Inserção de nome social
-* Organização dos usuários por idade baseado em sua data de nascimento
+* Criar um superusuário como moderador pra que ele valide as requisiçẽos
