@@ -203,3 +203,11 @@ curl -X POST http://localhost:8000/licoes/1/editar-html/
      -d '{"conteudo_html": "<div style=\"color: blue;\">Novo conteúdo HTML</div>"}'
 
 
+# Melhorias da próxima versão
+
+* Validação de usuário
+* Validação de senha com nível de segurança de mesma
+* Inserção de nome social
+* Organização dos usuários por idade baseado em sua data de nascimento
+
+
