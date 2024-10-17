@@ -1,5 +1,7 @@
 from rest_framework import serializers
 from .models import Usuario
+from .models import Licao
+
 
 class UsuarioSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, required=True, style={'input_type': 'password'})
@@ -26,3 +28,8 @@ class UsuarioSerializer(serializers.ModelSerializer):
         if password:
             instance.set_password(password)
         return super().update(instance, validated_data)
+
+class LicaoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Licao
+        fields = ['id', 'titulo', 'conteudo_html']

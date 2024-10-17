@@ -13,3 +13,10 @@ class Usuario(AbstractUser):
 
     def __str__(self):
         return self.email
+
+class Licao(models.Model):
+    titulo = models.CharField(max_length=200)
+    conteudo_html = models.TextField()
+
+    def __str__(self):
+        return self.titulo
