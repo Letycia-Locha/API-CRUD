@@ -134,11 +134,15 @@ Ao usar um arquivo .env, você mantém essas variáveis fora do código fonte, t
 
 # Execute as migrações:
 
+
 python manage.py migrate
+
 
 # Inicie o servidor:
 
+
 python manage.py runserver
+
 
 # Endpoints da API
 * Usuários
@@ -155,28 +159,45 @@ POST /licoes/{id}/editar-html/ - Editar o conteúdo HTML de uma lição
 --------------  Criar um Usuário
 
 curl -X POST http://localhost:8000/usuarios/ 
+
      -H "Content-Type: application/json" 
+     
      -d {
+     
     "username": "lelocha",
+    
     "email": "letycialochavet@gmail.com",
+    
     "password": "senha123",
+    
     "first_name": "Letycia",
+    
     "last_name": "Locha",
+    
     "data_de_nascimento": "1996-02-19"
+    
       }
 
 --------------- Obter Token JWT
 
-curl -X POST http://localhost:8000/api/token/ \
-     -H "Content-Type: application/json" \
+curl -X POST http://localhost:8000/api/token/ 
+
+     -H "Content-Type: application/json" 
+     
      -d  {
+     
           "email": "joao@example.com", 
+          
           "senha": "senha123"
+          
           }
 
 --------------- Editar HTML de uma Lição
 
-curl -X POST http://localhost:8000/licoes/1/editar-html/ \
-     -H "Authorization: Bearer seu_token_jwt" \
-     -H "Content-Type: application/json" \
+curl -X POST http://localhost:8000/licoes/1/editar-html/ 
+
+     -H "Authorization: Bearer seu_token_jwt" 
+     
+     -H "Content-Type: application/json" 
+     
      -d '{"conteudo_html": "<div style=\"color: blue;\">Novo conteúdo HTML</div>"}'
